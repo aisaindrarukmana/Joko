@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cerita Joko Seger dan Roro Anteng</title>
+  <style>
+    /* ==== Gaya Umum ==== */
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffaf0;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* ====== AUDIO ====== */
+    .audio-control {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .audio-control button {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 12px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .audio-control button:hover {
+      background-color: #2e7d32;
+    }
+    
+    /* ==== Header ==== */
+    header {
+      background: linear-gradient(90deg, #673b79, #ab4c5c);
+      color: white;
+      padding: 15px 10px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    /* ==== Navigasi ==== */
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .nav-btn {
+      background: #c098d2;
+      border: none;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-btn:hover {
+      background: #a0522d;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* ==== Halaman Cerita ==== */
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .page {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    img {
+      display: block;
+      margin: 10px auto;
+      max-width: 250px;
+      border-radius: 10px;
+    }
+
+    /* ==== Tabel ==== */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+    
+    td {
+      border: 1px solid #c5a0b3;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background: #d182a2;
+      border: 1px solid #c5a0b3;
+      padding: 8px;
+      text-align: left;
+      color: white;
+    }
+
+    /* ==== Footer ==== */
+    footer {
+      background: #a0522d;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+    
+    /* ==== Responsif ==== */
+    @media (max-width: 600px) {
+      .nav-btn {
+        width: 45%;
+        font-size: 14px;
+      }
+
+      img {
+        max-width: 200px;
+      }
+
+      table, th, td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><marquee>Story of Joko Seger dan Roro Anteng</marquee></h1>
+    <nav class="navbar">
+      <button onclick="showPage('cerita')" class="nav-btn">Cerita</button>
+      <button onclick="showPage('tokoh')" class="nav-btn">Tokoh</button>
+      <button onclick="showPage('pesan-moral')" class="nav-btn">Pesan Moral</button>
+      <button onclick="showPage('bagian-cerita')" class="nav-btn">Bagian Cerita</button>
+    </nav>
+  </header>
+
+  <!-- ====== AUDIO ====== -->
+  <div class="audio-control">
+    <audio id="musik" src="i.mp3"></audio>
+    <button onclick="playAudio()">🎵 Putar Musik</button>
+    <button onclick="pauseAudio()">⏸️ Jeda</button>
+  </div>
+
+  <main>
+    <!-- CERITA -->
+    <section id="cerita" class="page active">
+      <h2>Cerita</h2>
+      <img src="gunung.jpeg" alt="Gunung Bromo" />
+      <p>
+        Dahulu kala, hiduplah seorang pemuda gagah dari kalangan rakyat biasa bernama
+        <strong>Joko Seger</strong>, dan seorang gadis bangsawan yang cantik jelita bernama
+        <strong>Roro Anteng</strong>. Meski berasal dari dunia yang berbeda, mereka memiliki
+        kesamaan: hati yang bersih dan jiwa yang kuat.
+      </p>
+      <p>
+        Joko Seger dikenal sebagai pemuda yang jujur, berani, dan penyayang alam. Namanya “Seger”
+        berarti segar—karena kehadirannya selalu membawa harapan. Sementara Roro Anteng adalah putri
+        dari kerajaan Majapahit yang sedang dalam masa keruntuhan. Ia lembut, bijaksana, dan
+        memiliki aura ketenangan yang membuat siapa pun merasa damai di dekatnya.
+      </p>
+      <p>
+        Mereka memilih hidup sederhana di kaki gunung yang sejuk dan tenang—tempat yang kemudian
+        mereka beri nama <em>Tengger</em>, gabungan dari nama mereka: Anteng dan Seger.
+      </p>
+      <p>
+        Setelah bertahun-tahun menikah, mereka sedih karena belum dikaruniai anak. Mereka lalu
+        bertapa di gunung dan memohon kepada Sang Hyang Widi. Suara gaib pun berkata, “Kalian akan
+        memiliki anak, tapi anak bungsumu harus diserahkan ke kawah sebagai persembahan.” Demi
+        keturunan, mereka menyanggupi.
+      </p>
+      <p>
+        Mereka dikaruniai 25 anak. Namun ketika anak bungsu mereka, Raden Kusuma, tumbuh besar,
+        alam menagih janji. Gunung bergemuruh dan Raden Kusuma dengan rela berkorban ke dalam kawah
+        demi ketenangan orang tuanya. Sejak saat itu, rakyat Tengger mengadakan upacara
+        <strong>Yadnya Kasada</strong> untuk mengenang pengorbanannya.
+      </p>
+    </section>
+
+    <!-- TOKOH -->
+    <section id="tokoh" class="page">
+      <h2>Tokoh dan Watak</h2>
+      <img src="tokoh.jpeg" alt="Tokoh Cerita" />
+      <ul>
+        <li><strong>Joko Seger:</strong> Jujur, berani, dan penyayang alam.</li>
+        <li><strong>Roro Anteng:</strong> Lembut, bijaksana, dan menenangkan.</li>
+        <li><strong>Raden Kusuma:</strong> Berani, rela berkorban, dan berbakti kepada orang tua.</li>
+      </ul>
+    </section>
+
+    <!-- PESAN MORAL -->
+    <section id="pesan-moral" class="page">
+      <h2>Pesan Moral</h2>
+      <img src="ilustrasi.jpeg" alt="Ilustrasi Pesan Moral" />
+      <p>
+        Cinta sejati bukan hanya tentang kebersamaan, tetapi juga tentang pengorbanan.
+        Joko Seger dan Roro Anteng mengajarkan bahwa kasih, kesetiaan, dan pengorbanan
+        bisa menjadi warisan abadi yang dijaga oleh generasi berikutnya.
+      </p>
+    </section>
+
+    <!-- BAGIAN CERITA -->
+    <section id="bagian-cerita" class="page">
+      <h2>Bagian Cerita</h2>
+      <table>
+        <tr>
+          <th>Bagian Cerita</th>
+          <th>Isi Cerita</th>
+        </tr>
+        <tr>
+          <td>Pendahuluan</td>
+          <td>
+            Joko Seger dan Roro Anteng berasal dari latar belakang berbeda, tetapi sama-sama berhati
+            baik dan bijaksana.
+          </td>
+        </tr>
+        <tr>
+          <td>Awal Konflik</td>
+          <td>
+            Mereka belum memiliki anak, lalu bertapa di gunung dan mendapat janji dari Sang Hyang
+            Widi dengan syarat yang berat.
+          </td>
+        </tr>
+        <tr>
+          <td>Puncak Cerita</td>
+          <td>
+            Gunung bergemuruh, dan Raden Kusuma dengan ikhlas mengorbankan dirinya ke kawah demi
+            ketenangan orang tuanya.
+          </td>
+        </tr>
+        <tr>
+          <td>Akhir Cerita</td>
+          <td>
+            Rakyat Tengger mengadakan upacara Yadnya Kasada untuk mengenang pengorbanan Raden
+            Kusuma.
+          </td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cerita Nusantara | Joko Seger dan Roro Anteng</p>
+  </footer>
+
+  <script>
+    // Ambil elemen audio
+    const musik = document.getElementById("musik");
+    
+    function showPage(pageId) {
+      // Sembunyikan semua halaman
+      const pages = document.querySelectorAll(".page");
+      pages.forEach((page) => page.classList.remove("active"));
+
+      // Tampilkan halaman yang dipilih
+      document.getElementById(pageId).classList.add("active");
+    }
+    
+    function playAudio() {
+      musik.play();
+    }
+
+    function pauseAudio() {
+      musik.pause();
+    }
+  </script>
+</body>
+</html>
